@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
          ),
          body: Center(
            // child: Text("Hello Word"),
-           // 此处替换为 StatefulWidget、State结合使用
+           // 此处替换为 StatefulWidget、State结合使用 Copy
            // child: Text(wordPair.asPascalCase),
            child: RandomWords(),
          ),
