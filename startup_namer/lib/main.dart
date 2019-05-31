@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
            // 此处替换为 StatefulWidget、State结合使用 Copy
            // child: Text(wordPair.asPascalCase),
           //  child: RandomWords(),
-          child: CountDown(),
+          child: CountDown(title:'Count Down'),
          ),
        ),
       // home: RandomWords(),

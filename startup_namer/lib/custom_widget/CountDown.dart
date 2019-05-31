@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CountDown extends StatefulWidget{
+  CountDown({Key key,this.title}) : super(key:key);
+  final String title;
   @override
   State<StatefulWidget> createState() => new CountDownState();
 }
@@ -16,7 +18,7 @@ class CountDownState extends State<CountDown>{
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title:new Text('Count Down')
+        title:new Text(widget.title)
       ),
       body: Center(
         child: new Column(
