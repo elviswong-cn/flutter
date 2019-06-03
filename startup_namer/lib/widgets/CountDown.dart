@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/routes/MyRoute.dart';
 
+/**
+ * 计数器
+ */
 class CountDown extends StatefulWidget{
   CountDown({Key key,this.title}) : super(key:key);
   final String title;
@@ -28,6 +32,16 @@ class CountDownState extends State<CountDown>{
             new Text(
               '$_counter',
               style:Theme.of(context).textTheme.display1
+            ),
+            FlatButton(
+              child: Text('Jump To MyRoute'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.push(context,
+                new MaterialPageRoute(builder: (context){
+                  return new MyRoute();
+                }));
+              },
             )
           ],
         ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart'; // Android MD UI 设计风格
 import 'package:english_words/english_words.dart';
 
+/**
+ * 随机文本列表
+ */
 class RandomWords extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new RandomWordsState();
