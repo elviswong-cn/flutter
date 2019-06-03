@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-/**
- * 我的界面
- */
+// 我的界面
 class MyRoute extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

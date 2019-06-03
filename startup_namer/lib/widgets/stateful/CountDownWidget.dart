@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/routes/MyRoute.dart';
 
-/**
- * 计数器
- */
-class CountDown extends StatefulWidget{
-  CountDown({Key key,this.title}) : super(key:key);
+// 计数器
+ class CountDownWidget extends StatefulWidget{
+  CountDownWidget({Key key,this.title}) : super(key:key);
   final String title;
   @override
-  State<StatefulWidget> createState() => new CountDownState();
+  State<StatefulWidget> createState() => new CountDownWidgetState();
 }
 
-class CountDownState extends State<CountDown>{
+class CountDownWidgetState extends State<CountDownWidget>{
   int _counter = 0;
   void _incrementCounter(){
     this.setState((){
@@ -37,12 +35,24 @@ class CountDownState extends State<CountDown>{
               child: Text('Jump To MyRoute'),
               textColor: Colors.blue,
               onPressed: (){
-                Navigator.push(context,
-                new MaterialPageRoute(builder: (context){
+                // 匿名路由
+                // Navigator.push(context,
+                // new MaterialPageRoute(builder: (context){
+                //   return new MyRoute();
+                // }));
+                // 相当于
+                Navigator.of(context).push(new MaterialPageRoute(builder: (context){
                   return new MyRoute();
                 }));
+                // 路由表，在App在声明注册
+                // Navigator.pushNamed(context, 'my_page');
               },
-            )
+            ),
+            FlatButton(child: Text('Jump To EchoRoute And Arguments'),
+            textColor: Colors.green,
+            onPressed: (){
+              Navigator.pushNamed(context, 'echo_route',arguments:'Thie is EchoRoute And Arguments');
+            },)
           ],
         ),
       ),
