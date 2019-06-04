@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart'; // Android MD UI 设计风格
 import 'package:startup_namer/routes/EchoRoute.dart';
 import 'package:startup_namer/routes/MyRoute.dart';
+import 'package:startup_namer/widgets/stateful/CouterWidgetState.dart';
 import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
 
 // Dart语言的运行入口main函数
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         'my_page':(context)=>new MyRoute(),
-        'echo_route':(context)=>new EchoRoute()
+        'echo_route':(context)=>new EchoRoute(),
+        'couter_widget_state':(context)=>new CouterWidgetState()
       },
       home: Scaffold(
         //  appBar: AppBar(

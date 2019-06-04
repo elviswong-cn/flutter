@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// 自定义StatelessWidget
 class EchoWidget extends StatelessWidget{
    const EchoWidget({
-     key:Key,
+     Key key,
      @required this.text,
      @required this.backgroundColor
    }):super(key:key);
