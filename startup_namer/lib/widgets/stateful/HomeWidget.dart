@@ -75,6 +75,12 @@ class HomeWidgetState extends State<HomeWidget> {
                   return CouterWidgetState(initValue: 0);
                 }));
               },
+            ),
+            FlatButton(
+              child: Text('Learn Row And Column'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'row_column');
+              },
             )
           ],
         ),

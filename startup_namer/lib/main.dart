@@ -3,6 +3,7 @@ import 'package:startup_namer/routes/EchoRoute.dart';
 import 'package:startup_namer/routes/MyRoute.dart';
 import 'package:startup_namer/widgets/stateful/CouterWidgetState.dart';
 import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
+import 'package:startup_namer/widgets/stateful/RowAndColumnWidget.dart';
 
 // Dart语言的运行入口main函数
 void main(List<String> args) => runApp(MyApp());
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       routes: {
-        'my_page': (context) => new MyRoute(),
-        'echo_route': (context) => new EchoRoute(),
-        'couter_widget_state': (context) => new CouterWidgetState(initValue: 0)
+        'my_page': (context) => MyRoute(),
+        'echo_route': (context) => EchoRoute(),
+        'couter_widget_state': (context) => CouterWidgetState(initValue: 0),
+        'row_column': (context) => RowAndColumnWidget(),
       },
       home: Scaffold(
         //  appBar: AppBar(
