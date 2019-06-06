@@ -7,7 +7,6 @@ import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
 // Dart语言的运行入口main函数
 void main(List<String> args) => runApp(MyApp());
 
-
 // 主界面
 class MyApp extends StatelessWidget {
   @override
@@ -19,23 +18,22 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       routes: {
-        'my_page':(context)=>new MyRoute(),
-        'echo_route':(context)=>new EchoRoute(),
-        'couter_widget_state':(context)=>new CouterWidgetState()
+        'my_page': (context) => new MyRoute(),
+        'echo_route': (context) => new EchoRoute(),
+        'couter_widget_state': (context) => new CouterWidgetState(initValue: 0)
       },
       home: Scaffold(
         //  appBar: AppBar(
         //    title: Text("Welcome to Flutter App"),
         //  ),
-         body: Center(
-           // child: Text("Hello Word"),
-           // 此处替换为 StatefulWidget、State结合使用 Copy
-           // child: Text(wordPair.asPascalCasre),
-          //  child: RandomWords(),
-          // child: CountDown(title:'Count Down')
-          child: HomeWidget()
-          ),
-         ),
+        body: Center(
+            // child: Text("Hello Word"),
+            // 此处替换为 StatefulWidget、State结合使用 Copy
+            // child: Text(wordPair.asPascalCasre),
+            //  child: RandomWords(),
+            // child: CountDown(title:'Count Down')
+            child: HomeWidget()),
+      ),
       // home: RandomWords(),
     );
   }

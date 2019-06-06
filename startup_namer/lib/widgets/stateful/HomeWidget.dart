@@ -17,6 +17,8 @@ class HomeWidgetState extends State<HomeWidget> {
       appBar: AppBar(title: Text('Home Page')),
       body: Center(
         child: new Column(
+          textDirection: TextDirection.ltr,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             FlatButton(
               child: Text('Jump CountDown Page'),
