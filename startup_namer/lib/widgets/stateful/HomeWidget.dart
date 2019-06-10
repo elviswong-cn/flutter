@@ -81,6 +81,24 @@ class HomeWidgetState extends State<HomeWidget> {
               onPressed: () {
                 Navigator.pushNamed(context, 'row_column');
               },
+            ),
+            FlatButton(
+              child: Text('TextWidget'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'text_widgetful');
+              },
+            ),
+            RaisedButton(
+              child: Text('Button Learn'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'button_widgetful');
+              },
+            ),
+            RaisedButton(
+              child: Text('Switch And Checkbox'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'switchAndCb_widget');
+              },
             )
           ],
         ),

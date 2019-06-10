@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart'; // Android MD UI 设计风格
 import 'package:startup_namer/routes/EchoRoute.dart';
 import 'package:startup_namer/routes/MyRoute.dart';
+import 'package:startup_namer/widgets/stateless/ButtonWidget.dart';
 import 'package:startup_namer/widgets/stateful/CouterWidgetState.dart';
 import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
 import 'package:startup_namer/widgets/stateful/RowAndColumnWidget.dart';
+import 'package:startup_namer/widgets/stateless/SwitchAndCheckboxWidget.dart';
+import 'package:startup_namer/widgets/stateless/TextWidget.dart';
 
 // Dart语言的运行入口main函数
 void main(List<String> args) => runApp(MyApp());
@@ -23,6 +26,9 @@ class MyApp extends StatelessWidget {
         'echo_route': (context) => EchoRoute(),
         'couter_widget_state': (context) => CouterWidgetState(initValue: 0),
         'row_column': (context) => RowAndColumnWidget(),
+        'text_widgetful': (context) => TextWidgetful(),
+        'button_widgetful': (context) => ButtonWidget(),
+        'switchAndCb_widget':(context)=> SwitchAndCheckboxWidget(),
       },
       home: Scaffold(
         //  appBar: AppBar(
