@@ -5,7 +5,9 @@ import 'package:startup_namer/widgets/stateless/ButtonWidget.dart';
 import 'package:startup_namer/widgets/stateful/CouterWidgetState.dart';
 import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
 import 'package:startup_namer/widgets/stateful/RowAndColumnWidget.dart';
+import 'package:startup_namer/widgets/stateless/FocusWidget.dart';
 import 'package:startup_namer/widgets/stateless/SwitchAndCheckboxWidget.dart';
+import 'package:startup_namer/widgets/stateless/TextFieldWidget.dart';
 import 'package:startup_namer/widgets/stateless/TextWidget.dart';
 
 // Dart语言的运行入口main函数
@@ -28,7 +30,9 @@ class MyApp extends StatelessWidget {
         'row_column': (context) => RowAndColumnWidget(),
         'text_widgetful': (context) => TextWidgetful(),
         'button_widgetful': (context) => ButtonWidget(),
-        'switchAndCb_widget':(context)=> SwitchAndCheckboxWidget(),
+        'switchAndCb_widget': (context) => SwitchAndCheckboxWidget(),
+        'textField_widget': (context) => TextFieldWidget(),
+        'focus_widget':(context)=>FocusWidget(),
       },
       home: Scaffold(
         //  appBar: AppBar(

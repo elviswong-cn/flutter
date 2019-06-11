@@ -99,6 +99,18 @@ class HomeWidgetState extends State<HomeWidget> {
               onPressed: () {
                 Navigator.pushNamed(context, 'switchAndCb_widget');
               },
+            ),
+            OutlineButton(
+              child: Text('Login Widget'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'textField_widget');
+              },
+            ),
+            OutlineButton(
+              child: Text('Focus Learning'),
+              onPressed: () {
+                Navigator.pushNamed(context, 'focus_widget');
+              },
             )
           ],
         ),
