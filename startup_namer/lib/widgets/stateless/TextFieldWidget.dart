@@ -47,7 +47,7 @@ class _TextFieldState extends State<TextFieldWidget> {
                   labelText: '用户名',
                   hintText: '请输入用户名或邮箱',
                   prefixIcon: Icon(Icons.person),
-              border: InputBorder.none),
+                  border: InputBorder.none),
             ),
             TextField(
               autofocus: false,
@@ -76,5 +76,13 @@ class _TextFieldState extends State<TextFieldWidget> {
         ),
       ),
     );
+  }
+
+  // 界面移除，消除焦点
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    super.deactivate();
+    FocusScope.of(context).unfocus();
   }
 }

@@ -74,4 +74,13 @@ class _FocusState extends State<FocusWidget> {
       ),
     );
   }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    print('deactive');
+    _focusNode2.unfocus();
+    _focusNode1.unfocus();
+    super.deactivate();
+  }
 }
