@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart'; // Android MD UI 设计风格
 import 'package:startup_namer/routes/EchoRoute.dart';
 import 'package:startup_namer/routes/MyRoute.dart';
+import 'package:startup_namer/widgets/stateful/ConstrainedWidget.dart';
+import 'package:startup_namer/widgets/stateful/FlexWidget.dart';
+import 'package:startup_namer/widgets/stateful/FormWidget.dart';
+import 'package:startup_namer/widgets/stateful/StackAndPositionWidget.dart';
+import 'package:startup_namer/widgets/stateful/WrapFlowWidget.dart';
 import 'package:startup_namer/widgets/stateless/ButtonWidget.dart';
 import 'package:startup_namer/widgets/stateful/CouterWidgetState.dart';
 import 'package:startup_namer/widgets/stateful/HomeWidget.dart';
 import 'package:startup_namer/widgets/stateful/RowAndColumnWidget.dart';
 import 'package:startup_namer/widgets/stateless/FocusWidget.dart';
+import 'package:startup_namer/widgets/stateless/PaddingWidget.dart';
 import 'package:startup_namer/widgets/stateless/SwitchAndCheckboxWidget.dart';
 import 'package:startup_namer/widgets/stateless/TextFieldWidget.dart';
 import 'package:startup_namer/widgets/stateless/TextWidget.dart';
@@ -32,7 +38,13 @@ class MyApp extends StatelessWidget {
         'button_widgetful': (context) => ButtonWidget(),
         'switchAndCb_widget': (context) => SwitchAndCheckboxWidget(),
         'textField_widget': (context) => TextFieldWidget(),
-        'focus_widget':(context)=>FocusWidget(),
+        'focus_widget': (context) => FocusWidget(),
+        'form_widget': (context) => FormWidget(),
+        'flex_widget': (context) => FlexWidget(),
+        'wrapFlow_widget': (context) => WrapFlowWidget(),
+        'stackPositioned_widget': (context) => StackAndPositionWidget(),
+        'padding_widget': (context) => PaddingWidget(),
+        'constrained_widget': (context) => ConstrainedWidget(),
       },
       home: Scaffold(
         //  appBar: AppBar(
