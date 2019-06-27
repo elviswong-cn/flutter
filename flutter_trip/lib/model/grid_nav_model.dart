@@ -14,4 +14,10 @@ class GridNavModel {
       travel: CommonModel.fromJson(json['travel']),
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        'hotel': this.hotel.toJson(),
+        'flight': this.flight.toJson(),
+        'travel': this.travel.toJson(),
+      };
 }

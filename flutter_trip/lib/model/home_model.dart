@@ -6,7 +6,7 @@ import 'package:flutter_trip/model/sales_box_model.dart';
 class HomeModel {
   ConfigModel config;
   final List<CommonModel> bannerList;
-  final List<CommonModel> localNavList;
+  List<CommonModel> localNavList;
   final GridNavModel gridNav;
   final List<CommonModel> subNavList;
   final SalesBoxModel salesBox;
@@ -35,4 +35,14 @@ class HomeModel {
       salesBox: SalesBoxModel.fromJson(json['salesBox']),
     );
   }
+
+  Map<String, dynamic> toJson() =>
+      {
+        'config': this.config.toJson(),
+        'bannerList': this.bannerList.map((value)=>value.toJson()),
+        'localNavList': this.localNavList.map((value)=>value.toJson()),
+        'gridNav': this.gridNav.toJson(),
+        'subNavList': this.subNavList.map((value)=>value.toJson()),
+        'salesBox': this.salesBox.toString(),
+      };
 }

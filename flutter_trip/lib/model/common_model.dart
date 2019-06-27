@@ -1,4 +1,3 @@
-
 /// subNavListItem
 /// localNavListItem
 /// banner
@@ -20,6 +19,15 @@ class CommonModel {
         statusBarColor: json['statusBarColor'],
         hideAppBar: json['hideAppBar']);
   }
+
+  Map<String, dynamic> toJson() =>
+      {
+        'icon': this.icon,
+        'title': this.title,
+        'url': this.url,
+        'statusBarColor': this.statusBarColor,
+        'hideAppBar': this.hideAppBar
+      };
 }
 
 class GridNavItem {
@@ -31,14 +39,13 @@ class GridNavItem {
   final CommonModel item3;
   final CommonModel item4;
 
-  GridNavItem(
-      {this.startColor,
-      this.endColor,
-      this.mainItem,
-      this.item1,
-      this.item2,
-      this.item3,
-      this.item4});
+  GridNavItem({this.startColor,
+    this.endColor,
+    this.mainItem,
+    this.item1,
+    this.item2,
+    this.item3,
+    this.item4});
 
   factory GridNavItem.fromJson(Map<String, dynamic> json) {
     return GridNavItem(

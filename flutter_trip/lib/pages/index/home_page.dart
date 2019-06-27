@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/model/home_model.dart';
-import 'package:flutter_trip/widget/grid_nav.dart';
+import 'package:flutter_trip/widget/local_nav.dart';
 
 class HomePageView extends StatefulWidget {
   @override
@@ -99,13 +99,10 @@ class _State extends State<HomePageView> {
                     ),
                   ),
                   Container(
-                    height: 1000,
-                    child: Text('result:$resultString'),
+                    child: LocalNav(
+                      localNavList: _homeModel.localNavList,
+                    ),
                   ),
-                  GridNav(
-                    gridNavModel: null,
-                    name: 'ElvisWong',
-                  )
                 ],
               ),
             ),
