@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tour/page/tab_navigator.dart';
+import 'package:flutter_trip/pages/tab_navigator.dart';
 
 void main() => runApp(MyApp());
 
