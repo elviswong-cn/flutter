@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trip/model/common_model.dart';
-import 'package:flutter_trip/model/grid_nav_model.dart';
+import 'package:flutter_trip/widget/webview.dart';
 
 class LocalNav extends StatefulWidget {
   final List<CommonModel> localNavList;
@@ -27,28 +27,43 @@ class _State extends State<LocalNav> {
         child: Padding(
           padding: EdgeInsets.all(7),
           child: Column(
-            children: _items(context),
+            children: <Widget>[
+              _items(context),
+            ],
           ),
         ));
   }
 
   _items(BuildContext context) {
-    if (widget.localNavList == null) return null;
+    if (widget.localNavList == null)
+      return Container(
+        child: Text('当前数据为空'),
+      );
     List<Widget> widgets = [];
     widget.localNavList.forEach((value) => widgets.add(_item(context, value)));
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: widgets,
     );
   }
 
   Widget _item(BuildContext context, CommonModel value) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => WebView(
+                      url: value.url,
+                      statusBarColor: value.statusBarColor,
+                      hideAppBar: value.hideAppBar,
+                      title: value.title,
+                    )));
+      },
       child: Column(
         children: <Widget>[
           Image.network(
-            value.url,
+            value.icon,
             height: 32,
             width: 32,
           ),

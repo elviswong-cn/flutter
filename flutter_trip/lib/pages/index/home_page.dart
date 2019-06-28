@@ -16,7 +16,7 @@ class _State extends State<HomePageView> {
   double _opacity = 0;
   SwiperControl _swiperControll = SwiperControl();
   String resultString = "";
-  HomeModel _homeModel;
+  HomeModel _homeModel = HomeModel();
   final List swiperUrls = [
     'http://live-static.utoooo.com/app/adv/2019_06_17/01f39400ae1438e0290da99ba12573c1.png',
     'http://live-static.utoooo.com/app/adv/2019_06_17/c7931534cd4a6590b1d9e39e06a62e22.png',
@@ -41,9 +41,9 @@ class _State extends State<HomePageView> {
     });
 
 //    try {
-//      HomeModel model = await HomeDao.fetch();
+//      _homeModel = await HomeDao.fetch();
 //      setState(() {
-//        resultString = json.encode(model);
+//        resultString = json.encode(_homeModel.gridNav.travel.mainItem.url);
 //      });
 //    } catch (e) {
 //      setState(() {
@@ -98,9 +98,12 @@ class _State extends State<HomePageView> {
 //                      control: _swiperControll,
                     ),
                   ),
-                  Container(
-                    child: LocalNav(
-                      localNavList: _homeModel.localNavList,
+                  Padding(
+                    padding: EdgeInsets.only(left: 7, right: 7),
+                    child: Container(
+                      child: LocalNav(
+                        localNavList: _homeModel.localNavList,
+                      ),
                     ),
                   ),
                 ],

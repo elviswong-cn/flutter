@@ -11,6 +11,6 @@ class ConfigModel {
   }
 
   Map<String, dynamic> toJson() {
-    return {'searchUrl': searchUrl};
+    return {searchUrl: this.searchUrl};
   }
 }

@@ -6,7 +6,7 @@ import 'package:flutter_trip/model/sales_box_model.dart';
 class HomeModel {
   ConfigModel config;
   final List<CommonModel> bannerList;
-  List<CommonModel> localNavList;
+  final List<CommonModel> localNavList;
   final GridNavModel gridNav;
   final List<CommonModel> subNavList;
   final SalesBoxModel salesBox;
@@ -26,23 +26,24 @@ class HomeModel {
     return HomeModel(
       config: ConfigModel.fromJson(json['config']),
       bannerList:
-          bannerStrlist.map((value) => CommonModel.fromJson(value)).toList(),
-      localNavList:
-          localNavStrList.map((value) => CommonModel.fromJson(value)).toList(),
+          bannerStrlist?.map((value) => CommonModel.fromJson(value))?.toList(),
+      localNavList: localNavStrList
+          ?.map((value) => CommonModel.fromJson(value))
+          ?.toList(),
       gridNav: GridNavModel.fromJson(json['gridNav']),
       subNavList:
-          subNavStrList.map((value) => CommonModel.fromJson(value)).toList(),
+          subNavStrList?.map((value) => CommonModel.fromJson(value))?.toList(),
       salesBox: SalesBoxModel.fromJson(json['salesBox']),
     );
   }
 
-  Map<String, dynamic> toJson() =>
-      {
-        'config': this.config.toJson(),
-        'bannerList': this.bannerList.map((value)=>value.toJson()),
-        'localNavList': this.localNavList.map((value)=>value.toJson()),
-        'gridNav': this.gridNav.toJson(),
-        'subNavList': this.subNavList.map((value)=>value.toJson()),
-        'salesBox': this.salesBox.toString(),
+  Map<String, dynamic> toJson() => {
+        'config': this.config?.toJson(),
+        'bannerList': this.bannerList?.map((value) => value.toJson())?.toList(),
+        'localNavList':
+            this.localNavList?.map((value) => value.toJson())?.toList(),
+        'gridNav': this.gridNav?.toJson(),
+        'subNavList': this.subNavList?.map((value) => value.toJson())?.toList(),
+        'salesBox': this.salesBox?.toJson(),
       };
 }
