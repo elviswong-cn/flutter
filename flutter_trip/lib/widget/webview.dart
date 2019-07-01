@@ -6,6 +6,11 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 const WHITE_URLS = ['m.ctrip.com/', 'm.ctrip.com/html5', 'm.ctrip.com/html5/'];
 
 /// 网页
+/// 知识点：
+///   引用第三方插件：flutter_webview_plugin
+///   Color必须传入16进制数字
+///   Stack：相当于Android FrameLayout
+///   Position：绝对定位
 class WebView extends StatefulWidget {
   final String title;
   final String url;
@@ -17,7 +22,7 @@ class WebView extends StatefulWidget {
       {Key key,
       this.title = '',
       @required this.url,
-      this.hideAppBar,
+      this.hideAppBar = false,
       this.statusBarColor,
       this.backForbid = false})
       : super(key: key);
@@ -76,8 +81,8 @@ class _State extends State<WebView> {
     for (String value in WHITE_URLS) {
       print('url.endsWith:${url.endsWith(value)}');
       if (url?.endsWith(value) ?? false) {
-          contain = true;
-          break;
+        contain = true;
+        break;
       }
     }
     return contain;
@@ -114,11 +119,16 @@ class _State extends State<WebView> {
       );
     }
     return Container(
+      color: backgroundColor,
+      padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
       child: FractionallySizedBox(
         widthFactor: 1,
         child: Stack(
           children: <Widget>[
             GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Padding(
                 padding: EdgeInsets.only(left: 10),
                 child: Icon(
@@ -148,6 +158,8 @@ class _State extends State<WebView> {
     _onUrlChanged?.cancel();
     _onHttpError?.cancel();
     _onStateChanged?.cancel();
+    // 需要在页面的dispose之前
+    _webViewPlugin.dispose();
     super.dispose();
   }
 }

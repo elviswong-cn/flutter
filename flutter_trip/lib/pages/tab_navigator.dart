@@ -4,6 +4,10 @@ import 'package:flutter_trip/pages/index/home_page.dart';
 import 'package:flutter_trip/pages/index/me_page.dart';
 import 'package:flutter_trip/pages/index/search_page.dart';
 
+/// 知识点：
+///   底部导航栏：BottomNavigationBar->BottomNavigationBarItem
+///   内部页面切换：PageView->PageController 控制跳转
+///   setState用来更新当前页面UI
 class TabNavigator extends StatefulWidget {
   @override
   _State createState() => _State();
@@ -18,9 +22,10 @@ class _State extends State<TabNavigator> {
   @override
   initState() {
     super.initState();
-    _controller = PageController(initialPage: 0);
-    _controller.addListener(() {});
+    // initialPage：默认展示哪个页面
     _currentIndex = 0;
+    _controller = PageController(initialPage: _currentIndex);
+    _controller.addListener(() {});
   }
 
   @override
